@@ -9,11 +9,8 @@ body{
 }
 .genero-titulo-div{
     text-align: center;
-}
-.titulo-genero{
-    font-size: 35px;
-    text-decoration: none;
-    color: white;
+    display: flex;
+    justify-content: space-around;
 }
 a {
     box-shadow: inset 0 0 0 0 #20abdd;
@@ -26,7 +23,15 @@ a:hover {
     box-shadow: inset 100px 0 0 0 #1db2e8;
     color: white;
 }
-/*Genero*/
+.home-css{
+    text-align: right;
+}
+.titulo-href{
+    font-size: 30px;
+    text-decoration: none;
+    color: white;
+}
+/*Genero Y DETALLE*/
 .section-generos{
     display: flex;
     flex-wrap: wrap;
