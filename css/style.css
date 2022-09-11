@@ -1,0 +1,52 @@
+body{
+    background-color: rgb(6, 6, 83);
+}
+.logo{
+    display: block;
+    margin: 0px auto;
+    height: 10%;
+    width: 10%;
+}
+.genero-titulo-div{
+    text-align: center;
+}
+.titulo-genero{
+    font-size: 35px;
+    text-decoration: none;
+    color: white;
+}
+a {
+    box-shadow: inset 0 0 0 0 #20abdd;
+    color: #54b3d6;
+    margin: 0 -.25rem;
+    padding: 0 .25rem;
+    transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+}
+a:hover {
+    box-shadow: inset 100px 0 0 0 #1db2e8;
+    color: white;
+}
+/*Genero*/
+.section-generos{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+.generoh1{
+    text-align: center;
+    color: rgb(237, 225, 225);
+}
+.generos-div{
+    position: relative;
+    align-self: center;
+}
+.img-genres{
+    height: 180px;
+    width: 170px;
+}
+.a-genres{
+    text-decoration: none;
+    color: rgb(237, 225, 225);
+}
