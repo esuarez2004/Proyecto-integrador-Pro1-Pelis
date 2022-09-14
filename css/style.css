@@ -1,5 +1,10 @@
 body{
-    background-color: rgb(6, 6, 83);
+    background: #000000;  
+background: -webkit-linear-gradient(to bottom, #434343, #000000); 
+background: linear-gradient(to bottom, #434343, #000000); 
+background-repeat: no-repeat;
+background-size: 100%;
+
 }
 .logo{
     display: block;
