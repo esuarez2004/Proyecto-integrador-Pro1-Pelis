@@ -72,5 +72,5 @@ a:hover {
 .row{
     flex-direction: row;
     display: flex;
-    flex-wrap: wrap;
+    justify-content: space-between;
 }
