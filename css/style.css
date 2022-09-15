@@ -69,3 +69,8 @@ a:hover {
 .size  { height: 280px;
     width: 230px;
 }
+.row{
+    flex-direction: row;
+    display: flex;
+    flex-wrap: wrap;
+}
