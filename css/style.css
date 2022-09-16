@@ -70,6 +70,18 @@ a:hover {
     width: 400px;
     margin-top: 8%;
 }
+.textomovie{
+    color: white;
+}
+.logitos{
+    width: 2%;
+}
+.logofav{
+    width: 5%;
+}
+
+/* Fin detalles de pelicula */
+
 
 .años {
     color: white;
