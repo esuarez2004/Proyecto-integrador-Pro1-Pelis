@@ -70,3 +70,16 @@ a:hover {
     width: 400px;
     margin-top: 8%;
 }
+
+.años {
+    color: white;
+}
+.size  { height: 280px;
+    width: 230px;
+}
+.row{
+    flex-direction: row;
+    display: flex;
+    justify-content: space-between;
+}
+
