@@ -63,3 +63,10 @@ a:hover {
 .titulos {
     color: white;
 }
+
+/* Style.css de detalle pelicula  */
+.fotopeli{
+    border: solid 3px #ffffff1c ;
+    width: 400px;
+    margin-top: 8%;
+}
