@@ -62,6 +62,11 @@ background-size: 100%;
 }
 
 /* Style.css de detalle pelicula  */
+.Contenedorpadre{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
 .fotopeli{
     border: solid 3px #ffffff1c ;
     width: 400px;
@@ -69,9 +74,16 @@ background-size: 100%;
 }
 .textomovie{
     color: white;
+    width: 500px;
+    font-family: 'Bebas Neue';
 }
+
+#textoval{
+    margin: 10px ;
+ }
+
 .logitos{
-    width: 2%;
+    width: 6%;
 }
 .logofav{
     width: 5%;
