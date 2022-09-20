@@ -189,6 +189,19 @@ footer{
 .formulario {
     display: flex;
     flex-wrap: wrap;
+    margin-left: 536px;
+}
+.cuadro_buscar{
+    border: 2px solid white;
+    border-radius: 20px;
+    background-color: black;
+    padding: 3px;
+}
+.buscarbotton{
+    border-radius: 10px;
+    background-color: red;
+    font-family: 'Bebas Neue';
+    width: 21%;
 }
 .toy {
     color: white;
@@ -218,5 +231,36 @@ footer{
 .size{
     height: 170px; 
     width: 150px;
+}
+/* detalle pelicula y serie */
+.fotopeli{
+    width: 200px;
+    height: 300px;
+}
+.textomovie{
+    margin-top: 139px;
+    font-size: 15px;
+    margin-left: 121px;
+}
+#Nostrostext{
+    margin-left: 0px;
+}
+
+.home-css{
+    font-size: 30px;
+    text-align: center;
+    margin-left: 24px;
+}
+.titulo-href{
+    font-size: 15px;
+}
+.logofav{
+    margin-left: 214px;
+}
+#sinopsis{
+    margin-left: 47px;
+    margin-right: 17px;
+    padding: 2px;
+    margin-bottom: -5px;
 }
 }
