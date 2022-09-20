@@ -178,12 +178,12 @@ header{
 }
 
 /*Responsive (Iphone 12 pro)*/
-@media(min-width:390px){
+@media(max-width:844px){
 
 /*Genero Y DETALLE*/
 .img-genres{
     height: 105px;
-    width: 100px;
+    width: 98px;
 }
 .img-logos{
     height: 170px;
