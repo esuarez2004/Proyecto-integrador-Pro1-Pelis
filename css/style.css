@@ -13,12 +13,18 @@ footer{
     background-color: rgb(0 0 0 / 56%);
     padding: 1px;
     border-radius: 16px;
+    
 }
 .mainfooter{
     color: white;
+    text-decoration: none;
 }
-.iconos{
+.contacto{
+    text-decoration: none;
     color: white;
+    text-align: center;
+    margin: 0px 10px 0px 10px;
+    font-size: 20px;
 }
 .digital-udesa{
     display: flex;
