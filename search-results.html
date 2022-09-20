@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,67 +11,69 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
-<header> <img class="logo" src="./img/logo.png" alt="Logo" srcset="">
+    <header> <img class="logo" src="./img/logo.png" alt="Logo" srcset="">
+        <br>
+        <br>
+        <article class="formulario">
+            <form class="busqueda" action="./search-results.html" method="get">
+                <input class="busqueda" type="text" name="Buscador" value="" placeholder=" Iniciar busqueda">
+                <button class="busqueda" type="submit"> Buscar</button>
+            </form>
+        </article>
+        <br>
+        <br>
+        <article class="genero-titulo-div">
+            <a class="titulo-href" href="./index.html">HOME</a>
+            <a class="titulo-href" href="./genres.html">GENEROS</a>
+            <a class="titulo-href" href="./favoritos.html">FAVORITOS</a>
+        </article>
+    </header>
+
+    <main>
+
+        <h1 class="titulos">Tu resultado es : CARS</h1>
+        <h1 class="oculta">No se encontro resultado para : CARS</h1>
+
+        <section class="section">
+            <article class="article">
+                <img class="size imagenes" src="./img/cars1.jpg" alt="pelicula popular">
+                <p class="años">2006</p>
+                <a href="./detail_movie.html"><input type="button" value="Ver mas"></a>
+            </article>
+            <article class="article">
+                <img class="size imagenes" src="./img/cars2.jpg" alt="pelicula popular">
+                <p class="años">2011</p>
+                <a href="./detail_movie.html"><input type="button" value="Ver mas"></a>
+            </article>
+            <article class="article">
+                <img class="size imagenes" src="./img/cars3.jpg" alt="pelicula popular">
+                <p class="años">2017</p>
+                <a href="./detail_movie.html"><input type="button" value="Ver mas"></a>
+            </article>
+            <article class="article">
+                <img class="size imagenes" src="./img/detalle-comedia-part3.jpg" alt="pelicula popular">
+                <p class="años">2004</p>
+                <a href="./detail_movie.html"><input type="button" value="Ver mas"></a>
+            </article>
+            <article class="article">
+                <img class="size imagenes" src="./img/detalle-generor-terror-part2.jpg" alt="pelicula popular">
+                <p class="años">2019</p>
+                <a href="./detail_movie.html"><input type="button" value="Ver mas"></a>
+            </article>
+        </section>
+
+    </main>
     <br>
     <br>
-<article class="formulario"> 
-        <form class="busqueda" action="./search-results.html" method="get">
-        <input class="busqueda" type="text" name="Buscador" value="" placeholder=" Iniciar busqueda">
-        <button class="busqueda" type= "submit"> Buscar</button>
-        </form>
-</article>
-<br>
-<br>
-    <article class="genero-titulo-div">
-        <a class="titulo-href" href="./index.html">HOME</a>
-        <a class="titulo-href" href="./genres.html">GENEROS</a>
-        <a class="titulo-href" href="./favoritos.html">FAVORITOS</a>
-    </article>
-</header>
+    <br>
 
-<main>
-
-<h1 class="titulos">Tu resultado es : CARS</h1>
-<h1 class="oculta">No se encontro resultado para : CARS</h1>
-
-<section class="section">
-    <article class="article">
-        <img class="size imagenes" src="./img/cars1.jpg" alt="pelicula popular">
-        <p class="años">2006</p>
-        <a href="./detail_movie.html"><input type="button" value="Ver mas"></a>
-    </article>
-    <article class="article">
-        <img class="size imagenes" src="./img/cars2.jpg" alt="pelicula popular">
-        <p class="años">2011</p>
-        <a href="./detail_movie.html"><input type="button" value="Ver mas"></a>
-    </article>
-    <article class="article">
-        <img class="size imagenes" src="./img/cars3.jpg" alt="pelicula popular">
-        <p class="años">2017</p>
-        <a href="./detail_movie.html"><input type="button" value="Ver mas"></a>
-    </article>
-    <article class="article">
-        <img class="size imagenes" src="./img/detalle-comedia-part3.jpg" alt="pelicula popular">
-        <p class="años">2004</p>
-        <a href="./detail_movie.html"><input type="button" value="Ver mas"></a>
-    </article>
-    <article class="article">
-        <img class="size imagenes" src="./img/detalle-generor-terror-part2.jpg" alt="pelicula popular">
-        <p class="años">2019</p>
-        <a href="./detail_movie.html"><input type="button" value="Ver mas"></a>
-    </article>
-</section>
-
-</main>
-<br>
-<br>
-<br>
-
-<footer>
-    <p class="futer">Emiliano Suarez    &   Agustin Carman    &    Juan Martin Gomez Delgado</p>
-</footer>
+    <footer>
+        <p class="futer">Emiliano Suarez & Agustin Carman & Juan Martin Gomez Delgado</p>
+    </footer>
 
 </body>
+
 </html>
