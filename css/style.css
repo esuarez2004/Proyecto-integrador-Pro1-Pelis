@@ -189,7 +189,7 @@ footer{
 .formulario {
     display: flex;
     flex-wrap: wrap;
-    margin-left: 83px;
+    margin-left: 536px;
 }
 .cuadro_buscar{
     border: 2px solid white;
@@ -263,5 +263,8 @@ footer{
     margin-right: 17px;
     padding: 2px;
     margin-bottom: -5px;
+}
+.formulario{
+    margin-left: 83px;
 }
 }
