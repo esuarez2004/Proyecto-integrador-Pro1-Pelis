@@ -76,7 +76,6 @@ footer{
     color: rgb(237, 225, 225);
 }
 .generos-div{
-    position: relative;
     align-self: center;
 }
 .img-genres{
@@ -229,6 +228,7 @@ footer{
 }
 
 /*index y busqueda*/
+
 .size{
     height: 170px; 
     width: 150px;
