@@ -34,6 +34,9 @@ footer{
 .udesapic{
     width: 19%;
 }
+.logo-movie{
+    width: 8%;
+}
 
 /* Final Footer */
 .titulo-href:hover{
@@ -175,7 +178,7 @@ footer{
 .size  { height: 260px;
     width: 210px;
 }
-.section{
+.Peliculas-populares,.Series-mas-vistas,.Peliculas-mas-vistas{
     flex-direction: row;
     display: flex;
     justify-content: space-around;
