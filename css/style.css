@@ -8,6 +8,49 @@ body{
 header{
     background-color: #ffffff00;
 }
+
+/*Index*/
+
+/* peliculas populares */
+.PeliculasPopulares{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+ }
+   
+ .PeliculasPopulares article{
+    color: white;
+    width:18%;
+    text-align: center;
+ }
+   
+ 
+ /* series mas vistas*/
+ .SeriesMasVistas{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+ }
+   
+ .SeriesMasVistas article{
+    color: white;
+    width:18%;
+    text-align: center;
+ }
+   
+   
+ /*Peliculas mas vistas*/
+ .PeliculasMasVistas{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+ }
+   
+ .PeliculasMasVistas article{
+    color: white;
+    width:18%;
+    text-align: center;
+ }
 /* Foooter */
 footer{
     background-image: url(../img/fondo\ footer.jpg);
