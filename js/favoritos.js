@@ -9,7 +9,7 @@ let section = document.querySelector(".sectoin")
 let PersonajeFavoritos = ""
 for (let i = 0; i < favoritos.length; i++) {
     let url = "https://api.themoviedb.org/3/movie/{movie_id}?api_key=<<api_key>>&language=en-US"
-    fetch(Url)
+    fetch(url)
 
     .then(function (response) {
     return response.json()
