@@ -11,7 +11,7 @@ let PersonajeFavoritos = '';
 
 if (favoritos == null || favoritos.length == 0) {
 /*no hay favoritos*/
-section.innerHTML = '<p> NO hayb datos en favoritos<p/>'
+section.innerHTML = '<p> NO hay series ni peliculas en favoritos<p/>'
 } 
 
 else {
@@ -27,6 +27,13 @@ else {
 
     .then(function (data) {
     console.log(data);
+        PersonajeFavoritos +=  /*codigo de detalle aca*/
+
+
+
+
+    section.innerHTML = PersonajeFavoritos
+    /* para cuando termine el for se presentren en el DOM*/
     return data   
     }   
     )
