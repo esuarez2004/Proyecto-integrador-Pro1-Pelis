@@ -13,8 +13,31 @@
 </head>
 
 <body>
-
-    <header> <img class="logo" src="./img/logo.png" alt="Logo" srcset="">
+    <!-- Logo -->
+    <img class="logo" src="./img/logo.png" alt="Logo" srcset="">
+    <br>
+    <br>
+     <!-- Formulario de busqueda -->
+    <article class="formulario">
+        <form action="./search-results.html" method="get">
+            <input class="cuadro_buscar" type="text" name="Buscador" value="" placeholder=" Iniciar busqueda">
+            <button class="buscarbotton" type="submit"> Buscar</button>
+        </form> <!-- El name hace que creemos un string(cadena de texto(signo de interrogacion o igual) que viaja a una url) -->
+    </article>
+    <br>
+    <br>
+    <!-- menu de navegacion -->
+    <article class="genero-titulo-div">
+        <a class="titulo-href" href="./genres.html">GENEROS</a>
+        <a class="titulo-href" href="./favoritos.html">FAVORITOS</a>
+        <a class="titulo-href" href="./index.html">INDEX</a>
+    </article>
+</header>
+    
+        <h1 class="Titulo-search">Tu resultado de busqueda fue:</h1>
+        <section class="container">
+            <div class="container-div"></div>
+        </section>
         <!-- <br>
         <br>
         <article class="formulario">
@@ -30,7 +53,6 @@
             <a class="titulo-href" href="./genres.html">GENEROS</a>
             <a class="titulo-href" href="./favoritos.html">FAVORITOS</a>
         </article>
-    </header>
 
     <main>
 
@@ -88,6 +110,7 @@
         </div>
     </footer>
     <script src="./js/search-result.js"></script>
+    <script src="./js/validacion.js" text="text/javascript"></script>
 </body>
 
 </html>
