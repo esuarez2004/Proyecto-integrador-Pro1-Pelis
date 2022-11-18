@@ -2,6 +2,8 @@ let favorito = document.querySelector(".clicFav")
 let qs = location.search
 let qsObj = new URLSearchParams(qs);
 let id = qsObj.get("id");
+let fav = document.querySelector(".clicFav")
+
 
 
 let apiKey = "f2acabc2f1f7dfa29f6493c2fcca003f"
@@ -25,17 +27,20 @@ if (recuperoStorage != null) {
     favoritos = JSON.parse(recuperoStorage)
 }
 if (favoritos.includes(id)) {
-    clicFav.innerText = "Quitar de Favoritos";
+    fav.innerText = "Quitar de Favoritos";
 }
-clicFav.addEventListener("click",function(e) {
+fav.addEventListener("click",function(e) {
     e.preventDefault();
 
     if (favoritos.includes(id)){
         let indice = favoritos.indexOf(id)
         favoritos.splice(indice, 1);
-        clicFav.innerText = "Agregar a Favoritos"
+        fav.innerText = "Agregar a Favoritos"
     }else{
         favoritos.push(id)
-        clicFav.innerText = "Quitar de favoritos"
+        fav.innerText = "Quitar de favoritos"
     }
+
+    let favsToString = JSON.stringify(favoritos);
+    localStorage.setItem("favoritos", favsToString )
 })
