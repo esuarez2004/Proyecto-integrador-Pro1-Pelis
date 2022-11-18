@@ -1,5 +1,5 @@
 let RecuperoStorage = localStorage.getItem("favoritos");    
-// llega en un json/ y porque en apllication no esta favoritos
+// llega en un json/ 
 
 let favoritos = JSON.parse(RecuperoStorage)
 // lo convierto en un dato manipulable para jv (array) //
@@ -9,14 +9,13 @@ let section = document.querySelector(".section")
 let PersonajeFavoritos = '';
 
 if (favoritos == null || favoritos.length == 0) {
-/*no hay favoritos*/
+/*si no hay favoritos*/
 section.innerHTML = '<p> NO hay series ni peliculas en favoritos<p/>'
 } 
 
 else {
     for (let i = 0; i < favoritos.length; i++) {
-    let url = "https://api.themoviedb.org/3/movie/{movie_id}?api_key=<<api_key>>&language=en-US"
-    /* url de detalle   $favoritos[i]*/
+    let url = `https://api.themoviedb.org/3/movie/${favoritos[i]}?api_key=<<api_key>>&language=en-US`
     
     fetch(url)
 
