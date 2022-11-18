@@ -4,8 +4,7 @@ let RecuperoStorage = localStorage.getItem("favoritos");
 let favoritos = JSON.parse(RecuperoStorage)
 // lo convierto en un dato manipulable para jv (array) //
 
-let section = document.querySelector(".sectoin")
-// alert (section)   porque no me dice object html element
+let section = document.querySelector(".section")
 
 let PersonajeFavoritos = '';
 
@@ -27,9 +26,7 @@ else {
 
     .then(function (data) {
     console.log(data);
-        PersonajeFavoritos +=  /*codigo de detalle aca*/
-
-
+        PersonajeFavoritos +=   /*codigo de detalle aca*/
 
 
     section.innerHTML = PersonajeFavoritos
