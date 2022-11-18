@@ -2,7 +2,7 @@ let forms = document.querySelector("form");
 let buscar = document.querySelector("[name=Buscador]");
 // Agregamos evento
 // Tipo de evento = submit
-forms.addEventListener("submit",function (event) { // function= callback, event= parametro
+forms.addEventListener("submit",function(event) { // function= callback, event= parametro
     event.preventDefault(); // Detiene la informacion para poder evaluarla
     
     if (buscar.value == "") {
@@ -13,6 +13,4 @@ forms.addEventListener("submit",function (event) { // function= callback, event=
     else {
         this.submit() // "Submit" para que busque la informacion
     }
-
-
 })

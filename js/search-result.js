@@ -14,7 +14,7 @@ fetch(url)
     return response.json() //Metodo de intercambio de datos que deriva de la notacion de OBj
 })
 .then(function (data) {
-
+    console.log(data);
     //Sin resultado
     if (data.results.length == ""){
         alert("No hay resultados en tu busqueda")
