@@ -18,7 +18,7 @@ fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&language=es
       console.log(datos);
       console.log(datos.genres);
       for(let i = 0; i < 5; i++){
-          document.querySelector('.detalle-genero').innerHTML += `
+          document.querySelector('.detalleGenero').innerHTML += `
           <article>
               <div>
               <img src="https://image.tmdb.org/t/p/w342${datos.results[i].poster_path}" alt="pelicula">
