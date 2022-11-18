@@ -18,7 +18,7 @@ header{
     justify-content: space-between;
  }
    
- .PeliculasPopulares article{
+ .PeliculasPopulares-div{
     color: white;
     width:18%;
     text-align: center;
