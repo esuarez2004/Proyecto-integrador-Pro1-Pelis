@@ -7,7 +7,9 @@ fetch(`https://api.themoviedb.org/3/movie/popular?api_key=<<api_key>>&language=e
         .then(function(datos){
              console.log(datos.results);
             })
-        
+        .catch(function (error) {
+            return error
+        })
 
 // Series mas vistas
 
