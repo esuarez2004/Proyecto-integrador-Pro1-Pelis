@@ -11,7 +11,7 @@ fetch(`https://api.themoviedb.org/3/genre/movie/list?api_key=20342717cddddd7790a
                   <a href="detalledelgenero.html?idGenero=${datos.genres[i].id}&genero=${datos.genres[i].name}"><h2>${datos.genres[i].name}</h2></a>
                </div>
           </article>
-          `;
+          `
       };
 })
 
