@@ -12,3 +12,26 @@ fetch(url).then(function (response) {
 }).catch(function (error) {
     return error;
 })
+
+let favoritos = []
+
+let recuperoStorage = localStorage.getItem("favoritos")
+
+if (recuperoStorage != null) {
+    favoritos = JSON.parse(recuperoStorage)
+}
+if (favoritos.includes(id)) {
+    fav.innerText = "Quitar de Favoritos";
+}
+fav.addEventListener("click",function(e) {
+    e.preventDefault();
+
+    if (favoritos.includes(id)){
+        let indice = favoritos.indexOf(id)
+        favoritos.splice(indice, 1);
+        fav.innerText = "Agregar a Favoritos"
+    }else{
+        favoritos.push(id)
+        fav.innerText = "Quitar de favoritos"
+    }
+})
