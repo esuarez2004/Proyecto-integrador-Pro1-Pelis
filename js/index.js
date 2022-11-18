@@ -7,11 +7,11 @@ fetch(`https://api.themoviedb.org/3/movie/popular?api_key=f2acabc2f1f7dfa29f6493
         .then(function(datos){
              console.log(datos.results);
 
-            for (let i = 0; i < 4; i++) {
+            for (let i = 0; i < 5; i++) {
                 Contenedor.innerHTML += 
-                `<article ">
+                `<article>
                     <div>
-                        <img src="https://image.tmdb.org/t/p/w342${datos.results[i].poster_path}" alt="pelicula">
+                        <img class="img-index" src="https://image.tmdb.org/t/p/w342${datos.results[i].poster_path}" alt="pelicula">
                     </div>
                     <h5>${datos.results[i].title}</h5>
                     <p>${datos.results[i].release_date}</p>
@@ -33,11 +33,11 @@ fetch(`https://api.themoviedb.org/3/tv/popular?api_key=f2acabc2f1f7dfa29f6493c2f
         .then(function(datos){
              console.log(datos.results);
 
-            for (let i = 0; i < 4; i++) {
+            for (let i = 0; i < 5; i++) {
                 contenedor2.innerHTML += 
-                `<article ">
+                `<article>
                     <div>
-                        <img src="https://image.tmdb.org/t/p/w342${datos.results[i].poster_path}" alt="pelicula">
+                        <img class="img-index" src="https://image.tmdb.org/t/p/w342${datos.results[i].poster_path}" alt="pelicula">
                     </div>
                     <h5>${datos.results[i].title}</h5>
                     <p>${datos.results[i].release_date}</p>
@@ -58,11 +58,11 @@ fetch(`https://api.themoviedb.org/3/movie/top_rated?api_key=f2acabc2f1f7dfa29f64
  .then(function(datos){
       console.log(datos.results);
 
-     for (let i = 0; i < 4; i++) {
+     for (let i = 0; i < 5; i++) {
          contenedor3.innerHTML += 
-         `<article ">
+         `<article>
              <div>
-                 <img src="https://image.tmdb.org/t/p/w342${datos.results[i].poster_path}" alt="pelicula">
+                 <img class="img-index" src="https://image.tmdb.org/t/p/w342${datos.results[i].poster_path}" alt="pelicula">
              </div>
              <h5>${datos.results[i].title}</h5>
              <p>${datos.results[i].release_date}</p>

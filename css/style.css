@@ -23,7 +23,9 @@ header{
     width:18%;
     text-align: center;
  }
-   
+.img-index{
+    width: 100%;
+}
  
  /* series mas vistas*/
  .SeriesMasVistas{
