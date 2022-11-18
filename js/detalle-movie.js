@@ -3,7 +3,7 @@ let qs = location.search
 let qsObj = new URLSearchParams(qs);
 let id = qsObj.get("id");
 let fav = document.querySelector(".clicFav")
-
+let imagen = document.querySelector(".img")
 
 
 let apiKey = "f2acabc2f1f7dfa29f6493c2fcca003f"
@@ -15,6 +15,8 @@ fetch(url)
     return response.json();
 }).then(function (data) {
     console.log(data);
+    imagen.src= `https://image.tmdb.org/t/p/w500${data.poster_path}`
+
 }).catch(function (error) {
     return error;
 })
