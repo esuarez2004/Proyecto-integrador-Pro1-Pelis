@@ -15,7 +15,8 @@ fetch(url)
     return response.json();
 }).then(function (data) {
     console.log(data);
-    imagen.src= data[id]
+    imagen.src= `https://image.tmdb.org/t/p/w500${data.poster_path}`
+
 }).catch(function (error) {
     return error;
 })
