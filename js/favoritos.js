@@ -25,9 +25,14 @@ else {
 
     .then(function (data) {
     console.log(data);
-        PersonajeFavoritos +=   /*codigo de detalle aca*/
-
-
+        PersonajeFavoritos += `<article>
+                                <div>
+                                <img src="https://image.tmdb.org/t/p/w342${data.poster_path}" alt="Imagen">
+                                </div>
+                                <h5 class="Titulo-search">Titulo: ${data.original_title}</h5>
+                                <a href="./detail_movie.html?id=${data.id}">Ver mas informacion</a>
+                              </article>`
+        
     section.innerHTML = PersonajeFavoritos
     /* para cuando termine el for se presentren en el DOM*/
     return data   
