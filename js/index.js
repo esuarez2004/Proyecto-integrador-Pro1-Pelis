@@ -11,7 +11,7 @@ fetch(`https://api.themoviedb.org/3/movie/popular?api_key=f2acabc2f1f7dfa29f6493
                 Contenedor.innerHTML += 
                 `<article>
                     <div>
-                        <img class="img-index" src="https://image.tmdb.org/t/p/w342${datos.results[i].poster_path}" alt="pelicula">
+                        <img class="img-js" src="https://image.tmdb.org/t/p/w342${datos.results[i].poster_path}" alt="pelicula">
                     </div>
                     <h5>${datos.results[i].title}</h5>
                     <p>${datos.results[i].release_date}</p>
@@ -37,7 +37,7 @@ fetch(`https://api.themoviedb.org/3/tv/popular?api_key=f2acabc2f1f7dfa29f6493c2f
                 contenedor2.innerHTML += 
                 `<article>
                     <div>
-                        <img class="img-index" src="https://image.tmdb.org/t/p/w342${datos.results[i].poster_path}" alt="pelicula">
+                        <img class="img-js" src="https://image.tmdb.org/t/p/w342${datos.results[i].poster_path}" alt="pelicula">
                     </div>
                     <h5>${datos.results[i].original_name}</h5>
                     <p>${datos.results[i].first_air_date}</p>
@@ -62,7 +62,7 @@ fetch(`https://api.themoviedb.org/3/movie/top_rated?api_key=f2acabc2f1f7dfa29f64
          contenedor3.innerHTML += 
          `<article>
              <div>
-                 <img class="img-index" src="https://image.tmdb.org/t/p/w342${datos.results[i].poster_path}" alt="pelicula">
+                 <img class="img-js" src="https://image.tmdb.org/t/p/w342${datos.results[i].poster_path}" alt="pelicula">
              </div>
              <h5>${datos.results[i].title}</h5>
              <p>${datos.results[i].release_date}</p>

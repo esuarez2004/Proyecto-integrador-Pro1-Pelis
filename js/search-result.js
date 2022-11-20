@@ -25,9 +25,9 @@ fetch(url)
         document.querySelector('.container').innerHTML += `
                     <article>
                         <div>
-                        <img src="https://image.tmdb.org/t/p/w342${data.results[i].poster_path}" alt="Imagen">
+                        <img  class="img-js" src="https://image.tmdb.org/t/p/w342${data.results[i].poster_path}" alt="Imagen">
                         </div>
-                        <h5 class="Titulo-search">Titulo: ${data.results[i].original_title}</h5>
+                        <h5 class="Titulo-search"> ${data.results[i].original_title}</h5>
                         <a href="./detail_movie.html?id=${data.results[i].id}">Ver mas informacion</a>
                     </article>
                 `;
