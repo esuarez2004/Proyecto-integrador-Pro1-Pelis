@@ -39,9 +39,9 @@ fetch(`https://api.themoviedb.org/3/tv/popular?api_key=f2acabc2f1f7dfa29f6493c2f
                     <div>
                         <img class="img-index" src="https://image.tmdb.org/t/p/w342${datos.results[i].poster_path}" alt="pelicula">
                     </div>
-                    <h5>${datos.results[i].title}</h5>
-                    <p>${datos.results[i].release_date}</p>
-                    <a href="./detail_movie.html?id=${datos.results[i].id}">Ver mas informacion</a>
+                    <h5>${datos.results[i].original_name}</h5>
+                    <p>${datos.results[i].first_air_date}</p>
+                    <a href="./detalle_serie.html?id=${datos.results[i].id}">Ver mas informacion</a>
                 </article>`
                 
             }
