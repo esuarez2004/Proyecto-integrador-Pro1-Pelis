@@ -8,7 +8,7 @@ forms.addEventListener("submit",function(event) { // function= callback, event= 
     if (buscar.value == "") {
         alert("No escribio nada en el formulario, porfavor ingrese un texto");
     } else if (buscar.value.length <3){ 
-        alert("Porfavor, ingrese mas de dos letras en el formulario")
+        alert("Por favor, ingrese mas de dos letras en el formulario")
     }
     else {
         this.submit() // "Submit" para que busque la informacion
