@@ -285,6 +285,13 @@ footer{
     padding: 8px;
     position: relative;
 }
+
+
+/*Java*/
+.titulo{
+    color: white;
+}
+
 /*Responsive  (Iphone 12 pro)*/
 @media(max-width:390px){
 
@@ -339,3 +346,5 @@ footer{
     margin-left: 83px;
 }
 }
+
+
