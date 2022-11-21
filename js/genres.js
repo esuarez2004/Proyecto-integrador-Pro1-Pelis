@@ -9,7 +9,7 @@ fetch(url)
   .then(function(datos){
       console.log(datos.genres);
       for(let i = 0; i < 5; i++){
- HEAD
+
           document.querySelector('.generosPeliculas').innerHTML += `
                                                                     <article class="peliculas-art">
                                                                         <div class="peliculas-div">

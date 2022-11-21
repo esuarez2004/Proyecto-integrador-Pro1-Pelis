@@ -5,12 +5,12 @@ let id = qsObj.get("id");
 let fav = document.querySelector(".clicFav")
 let imagen = document.querySelector(".img")
 let titulo_peli = document.querySelector(".titulo")
-let rating_peli = document.querySelector("#rating")
-let estreno_peli = document.querySelector("#año_estreno")
+let rating_peli  = document.querySelector("#rating")
+let estreno_peli  = document.querySelector("#estreno")
 let sinopsis_peli = document.querySelector("#sinopsis")
 let genero_peli = document.querySelector("#genero")
 let duracion_peli = document.querySelector("#duracion")
-let plataforma_peli = document.querySelector("#plataforma")
+let plataforma_peli = document.querySelector(".plataforma")
 
 
 let apiKey = "f2acabc2f1f7dfa29f6493c2fcca003f"
@@ -26,12 +26,12 @@ fetch(url)
     titulo_peli.innerText = data.title
     imagen.src= `https://image.tmdb.org/t/p/w500${data.poster_path}`
     rating_peli.innerHTML += data.vote_average
-    estreno_peli.innerHTML += date.release_date
+    estreno_peli.innerHTML += date.title
     sinopsis_peli.innerHTML += data.overview
     for(let i of data.genres){
         genero_peli.innerHTML += `<a href= "detail-genres.html?id0${i.id}">${i.name}</a>`
     }
-    duracion_peli.innerHTML += data.runtime + "minutos"
+    duracion_peli.innerHTML += data.runtime + "Minutos"
     plataforma_peli.innerHTML += data.imdb_id
 }).catch(function (error) {
     return error;
