@@ -285,8 +285,24 @@ footer{
     padding: 8px;
     position: relative;
 }
-
-
+/*Genero*/
+.peliculas-div{
+    width: 125px;
+    margin: auto;
+    background-color:lightslategrey
+ }
+ .peliculas-art{
+    width: 25%;
+    margin: auto;
+    text-align: center;
+ }
+ .generosPeliculas{
+    display: flex;
+    justify-content:space-between;
+    margin-bottom: 8%;
+    margin-top: 13%;
+ }
+ 
 /*Java*/
 .titulo{
     
