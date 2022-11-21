@@ -6,6 +6,8 @@ let favoritos = JSON.parse(RecuperoStorage)
 
 let section = document.querySelector(".section")
 
+let apiKey = "f2acabc2f1f7dfa29f6493c2fcca003f"
+
 let PersonajeFavoritos = '';
 
 if (favoritos == null || favoritos.length == 0) {
@@ -15,7 +17,7 @@ section.innerHTML = '<p> NO hay series ni peliculas en favoritos<p/>'
 
 else {
     for (let i = 0; i < favoritos.length; i++) {
-    let url = `https://api.themoviedb.org/3/movie/${favoritos[i]}?api_key=<<api_key>>&language=en-US`
+    let url = `https://api.themoviedb.org/3/movie/${favoritos[i]}?api_key=${apiKey}&language=es`
     
     fetch(url)
 
