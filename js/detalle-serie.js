@@ -1,33 +1,33 @@
-  // Array para almacenar ids de favoritos
-    let favoritoss = [];
-    
-    // Acceder a la Query String
-    let queryString = location.search;
-    let objetoQueryString = new URLSearchParams(queryString);
-    let x = objetoQueryString.get('id');
-    console.log(x);
+let favorito = document.querySelector(".clicFav")
+let qs = location.search
+let qsObj = new URLSearchParams(qs);
+let id = qsObj.get("id");
+let fav = document.querySelector(".clicFav")
+let apiKey = "f2acabc2f1f7dfa29f6493c2fcca003f"
+const url = `https://api.themoviedb.org/3/tv/${id}?api_key=${apiKey}&language=es`
 
-fetch(`https://api.themoviedb.org/3/tv/${x}?api_key=f2acabc2f1f7dfa29f6493c2fcca003f&language=es`)
-.then(function(response){
+fetch(url)
+
+
+.then(function(response) {
     return response.json();
 })
 .then(function(datos){
 
-    console.log(datos);
+        console.log(datos);
 
-    document.querySelector('main').innerHTML = `
-        <article class=d-series>
-            <div>
-            <img src="https://image.tmdb.org/t/p/w342${datos.poster_path}" alt="pelicula">
-            </div>
-            <h5>${datos.original_name}</h5>
-            <p>${datos.vote_average}</p>
-            <p>${datos.first_air_date}</p>
-            <p>${datos.overview}</p>
-            <p>${datos.genres[0].name}</p>
-            <button class="fav">Agregar a favoritos</button>
-        </article>
-            
+        document.querySelector('.Contenedorpadre').innerHTML = `
+            <article class=d-pelicula>
+                <div class="foto-pelicula-popular">
+                <img src="https://image.tmdb.org/t/p/w342${datos.poster_path}" alt="pelicula">
+                </div>
+                <h5 class="titulo"> Titulo: ${datos.name}</h5>
+                <p>Rating: ${datos.vote_average}</P>
+                <p>Fecha de lanzamiento: ${datos.first_air_date}</p>
+                <p> Duracion:${datos.number_of_seasons} temporadas</p>
+                <p>Sinopsis:${datos.overview}</p>
+                <p>Genero:${datos.genres[0].name}</p>
+                
             `
 
 }).catch(function (error) {
@@ -44,7 +44,7 @@ fetch(url_plataformas)
         let plataformas = document.querySelector(".plataforma");
         
         if (data.results.AR == null){
-            plataformas.innerHTML += "No se encontraron plataformas"
+            plataformas.innerHTML += "No se encontraron plataformas en Argentina"
         }else{
             for(let i = 0; i<data.results.AR.flatrate.length; i ++){
                 plataformas.innerHTML += data.results.AR.flatrate[i].provider_name + ", "

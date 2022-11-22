@@ -23,7 +23,7 @@ fetch(url)
                 </div>
                 <h5 class="titulo"> Titulo: ${datos.title}</h5>
                 <p>Rating:${datos.vote_average}</P>
-                <p>Fecha:${datos.release_date}</p>
+                <p>Fecha de estreno:${datos.release_date}</p>
                 <p> Duracion:${datos.runtime} min</p>
                 <p>Sinopsis:${datos.overview}</p>
                 <p>Genero:${datos.genres[0].name}</p>
@@ -33,7 +33,7 @@ fetch(url)
 }).catch(function (error) {
     return error;
 })
-let url_plataformas = `https://api.themoviedb.org/3/movie/${id}/watch/providers?api_key=${apiKey}`
+let url_plataformas = `https://api.themoviedb.org/3/tv/${id}/watch/providers?api_key=${apiKey}`
 
 fetch(url_plataformas)
     .then(function(response) {
@@ -44,7 +44,7 @@ fetch(url_plataformas)
         let plataformas = document.querySelector(".plataforma");
         
         if (data.results.AR == null){
-            plataformas.innerHTML += "No se encontraron plataformas"
+            plataformas.innerHTML += "No se encontraron plataformas en Argentina"
         }else{
             for(let i = 0; i<data.results.AR.flatrate.length; i ++){
                 plataformas.innerHTML += data.results.AR.flatrate[i].provider_name + ", "
