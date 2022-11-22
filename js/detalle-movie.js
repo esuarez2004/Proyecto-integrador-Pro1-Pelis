@@ -3,16 +3,6 @@ let qs = location.search
 let qsObj = new URLSearchParams(qs);
 let id = qsObj.get("id");
 let fav = document.querySelector(".clicFav")
-let imagen = document.querySelector(".img")
-let titulo_peli = document.querySelector(".titulo")
-let rating_peli  = document.querySelector("#rating")
-let estreno_peli  = document.querySelector("#estreno")
-let sinopsis_peli = document.querySelector("#sinopsis")
-let genero_peli = document.querySelector("#genero")
-let duracion_peli = document.querySelector("#duracion")
-let plataforma_peli = document.querySelector(".plataforma")
-
-
 let apiKey = "f2acabc2f1f7dfa29f6493c2fcca003f"
 const url = `https://api.themoviedb.org/3/movie/${id}?api_key=${apiKey}&language=es`
 
@@ -21,22 +11,30 @@ fetch(url)
 
 .then(function(response) {
     return response.json();
-}).then(function (data) {
-    console.log(data);
-    titulo_peli.innerText = data.title
-    imagen.src= `https://image.tmdb.org/t/p/w500${data.poster_path}`
-    rating_peli.innerHTML += data.vote_average
-    estreno_peli.innerHTML += date.name
-    sinopsis_peli.innerHTML += data.overview
-    for(let i of data.genres){
-        genero_peli.innerHTML += `<a href= "detail-genres.html?id0${i.id}">${i.name}</a>`
-    }
-    duracion_peli.innerHTML += data.runtime + "Minutes"
-    
+})
+.then(function(datos){
+
+        console.log(datos);
+
+        document.querySelector('.Contenedorpadre').innerHTML = `
+            <article class=d-pelicula>
+                <div class="foto-pelicula-popular">
+                <img src="https://image.tmdb.org/t/p/w342${datos.poster_path}" alt="pelicula">
+                </div>
+                <h5> Titulo: ${datos.title}</h5>
+                <p>Rating:${datos.vote_average}</P>
+                <p>Fecha:${datos.release_date}</p>
+                <p> Duracion:${datos.runtime} min</p>
+                <p>Sinopsis:${datos.overview}</p>
+                <p>${datos.genres[0].name}</p>
+
+            </article>
+        `;
+
 }).catch(function (error) {
     return error;
 })
-let url_plataformas = `https://api.themoviedb.org/3/movie/${id}/watch/providers?api_key=f2acabc2f1f7dfa29f6493c2fcca003f`
+let url_plataformas = `https://api.themoviedb.org/3/movie/${id}/watch/providers?api_key=${apiKey}`
 
 fetch(url_plataformas)
     .then(function(response) {

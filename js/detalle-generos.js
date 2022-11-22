@@ -24,7 +24,7 @@ fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&language=es
               <img src="https://image.tmdb.org/t/p/w342${datos.results[i].poster_path}" alt="pelicula">
               </div>
               <h2>${datos.results[i].title}</h2>
-              <a href="detallepelicula.html?id=${datos.results[i].id}">Ver mas informacion</a>
+              <a href="detail_movie.html?id=${datos.results[i].id}">Ver mas informacion</a>
           </article>
           `;
       };
