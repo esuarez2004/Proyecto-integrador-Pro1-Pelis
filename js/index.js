@@ -1,5 +1,5 @@
 // peliculas populares
-let Contenedor = document.querySelector(".PeliculasPopulares")
+let Contenedor = document.querySelector(".PeliculasPopulares") //document representa al html cargado en el navegador y queryS capturar
 fetch(`https://api.themoviedb.org/3/movie/popular?api_key=f2acabc2f1f7dfa29f6493c2fcca003f`) // Api donde se intercambia info. entre aplicacions, mediante archivos de texto
        .then(function(response){
            return response.json(); // Transforma en una cadena de texto para que intercambie los datos 
