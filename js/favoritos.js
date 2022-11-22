@@ -12,7 +12,7 @@ let PersonajeFavoritos = '';
 
 if (favoritos == null || favoritos.length == 0) {
 /*si no hay favoritos*/
-section.innerHTML = '<p> NO hay series ni peliculas en favoritos<p/>'
+section.innerHTML = '<strong class="NoFav"> NO hay series ni peliculas en favoritos</strong>'
 } 
 
 else {
@@ -29,7 +29,7 @@ else {
     console.log(data);
         PersonajeFavoritos += `<article>
                                 <div>
-                                <img src="https://image.tmdb.org/t/p/w342${data.poster_path}" alt="${data.original_title}">
+                                <a href="./detail_movie.html?id=${data.id}"><img src="https://image.tmdb.org/t/p/w342${data.poster_path}" alt="${data.original_title}"></a> 
                                 </div>
                                 <h5 class="Titulo-search">Titulo: ${data.original_title}</h5>
                                 <a href="./detail_movie.html?id=${data.id}">Ver mas informacion</a>
@@ -48,3 +48,5 @@ else {
     }
     
 }
+
+/* Lo mismo con serie */

@@ -9,18 +9,14 @@ fetch(url)
   .then(function(datos){
       console.log(datos.genres);
       for(let i = 0; i < 5; i++){
-
-
-
-
-document.querySelector('.generosPeliculas').innerHTML += `
+        document.querySelector('.generosPeliculas').innerHTML += `
           <article class="peliculas-art">
                <div class="peliculas-div">
                <a class="geneross"href="./detail-genres.html?idGenero=${datos.genres[i].id}&genero=${datos.genres[i].name}"><h2>${datos.genres[i].name}</h2></a>
                </div>
           </article>
           `;
-      };
+        };
 })
 
 .catch(function(error){
