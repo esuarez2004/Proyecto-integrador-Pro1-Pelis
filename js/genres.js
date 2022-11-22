@@ -16,7 +16,7 @@ fetch(url)
 document.querySelector('.generosPeliculas').innerHTML += `
           <article class="peliculas-art">
                <div class="peliculas-div">
-               <a href="./detail-genres.html?idGenero=${datos.genres[i].id}&genero=${datos.genres[i].name}"><h2>${datos.genres[i].name}</h2></a>
+               <a class="geneross"href="./detail-genres.html?idGenero=${datos.genres[i].id}&genero=${datos.genres[i].name}"><h2>${datos.genres[i].name}</h2></a>
                </div>
           </article>
           `;

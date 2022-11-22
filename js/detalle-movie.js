@@ -26,16 +26,37 @@ fetch(url)
     titulo_peli.innerText = data.title
     imagen.src= `https://image.tmdb.org/t/p/w500${data.poster_path}`
     rating_peli.innerHTML += data.vote_average
-    estreno_peli.innerHTML += date.title
+    estreno_peli.innerHTML += date.name
     sinopsis_peli.innerHTML += data.overview
     for(let i of data.genres){
         genero_peli.innerHTML += `<a href= "detail-genres.html?id0${i.id}">${i.name}</a>`
     }
-    duracion_peli.innerHTML += data.runtime + "Minutos"
-    plataforma_peli.innerHTML += data.imdb_id
+    duracion_peli.innerHTML += data.runtime + "Minutes"
+    
 }).catch(function (error) {
     return error;
 })
+let url_plataformas = `https://api.themoviedb.org/3/movie/${id}/watch/providers?api_key=f2acabc2f1f7dfa29f6493c2fcca003f`
+
+fetch(url_plataformas)
+    .then(function(response) {
+        return response.json()
+    })
+    .then(function(data) {
+        console.log(data);
+        let plataformas = document.querySelector(".plataforma");
+        
+        if (data.results.AR == null){
+            plataformas.innerHTML += "No se encontraron plataformas"
+        }else{
+            for(let i = 0; i<data.results.AR.flatrate.length; i ++){
+                plataformas.innerHTML += data.results.AR.flatrate[i].provider_name + ", "
+            }
+        }
+    })
+    .catch(function(error) {
+        console.log("Error: " + error);
+    })
 
 let favoritos = []
 

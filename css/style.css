@@ -216,7 +216,14 @@ footer{
 
 /* Fin detalles de pelicula */
 
-
+.detalleGenero{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.generosPeliculas{
+    color: white;
+}
 .años {
     color: white;
 }
@@ -289,8 +296,9 @@ footer{
 .peliculas-div{
     width: 125px;
     margin: auto;
-    background-color:lightslategrey
- }
+    background-color:lightslategrey;
+    
+}
  .peliculas-art{
     width: 25%;
     margin: auto;
@@ -302,10 +310,13 @@ footer{
     margin-bottom: 8%;
     margin-top: 13%;
  }
- 
+ .geneross{
+    color:white;
+    text-decoration: none;
+ }
 /*Java*/
-.titulo{
-    
+.info{
+    color: white;
 }
  
 
@@ -337,7 +348,7 @@ footer{
     margin-top: 139px;
     font-size: 15px;
     margin-left: 121px;
-    align
+    
 }
 #Nostrostext{
     margin-left: 0px;

@@ -17,7 +17,7 @@ fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&language=es
   .then(function(datos){
       console.log(datos);
       console.log(datos.genres);
-      for(let i = 0; i < 5; i++){
+      for(let i = 0; i < 8; i++){
           document.querySelector('.detalleGenero').innerHTML += `
           <article>
               <div>
