@@ -1,32 +1,32 @@
-let favorito = document.querySelector(".clicFav")
-let qs = location.search
-let qsObj = new URLSearchParams(qs);
-let id = qsObj.get("id");
-let fav = document.querySelector(".clicFav")
-let apiKey = "f2acabc2f1f7dfa29f6493c2fcca003f"
-let url = `https://api.themoviedb.org/3/tv/${id}?api_key=${apiKey}&language=es`
+  // Array para almacenar ids de favoritos
+    let favoritoss = [];
+    
+    // Acceder a la Query String
+    let queryString = location.search;
+    let objetoQueryString = new URLSearchParams(queryString);
+    let x = objetoQueryString.get('id');
+    console.log(x);
 
-fetch(url)
-
-
-.then(function(response) {
+fetch(`https://api.themoviedb.org/3/tv/${x}?api_key=f2acabc2f1f7dfa29f6493c2fcca003f&language=es`)
+.then(function(response){
     return response.json();
 })
 .then(function(datos){
 
-        console.log(datos);
+    console.log(datos);
 
-        document.querySelector('.Contenedorpadre').innerHTML = `
-          
-                <div>
-                <img src="https://image.tmdb.org/t/p/w342${datos.poster_path}" alt="pelicula">
-                </div>
-                <h5> Titulo: ${datos.title}</h5>
-                <p>Rating:${datos.vote_average}</P>
-                <p>Fecha:${datos.release_date}</p>
-                <p> Duracion:${datos.runtime} min</p>
-                <p>Sinopsis:${datos.overview}</p>
-                <p>Genero:${datos.genres[0].name}</p>
+    document.querySelector('main').innerHTML = `
+        <article class=d-series>
+            <div>
+            <img src="https://image.tmdb.org/t/p/w342${datos.poster_path}" alt="pelicula">
+            </div>
+            <h5>${datos.original_name}</h5>
+            <p>${datos.vote_average}</p>
+            <p>${datos.first_air_date}</p>
+            <p>${datos.overview}</p>
+            <p>${datos.genres[0].name}</p>
+            <button class="fav">Agregar a favoritos</button>
+        </article>
             
             `
 

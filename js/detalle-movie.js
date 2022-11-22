@@ -21,7 +21,7 @@ fetch(url)
                 <div class="foto-pelicula-popular">
                 <img src="https://image.tmdb.org/t/p/w342${datos.poster_path}" alt="pelicula">
                 </div>
-                <h5> Titulo: ${datos.title}</h5>
+                <h5 class="titulo"> Titulo: ${datos.title}</h5>
                 <p>Rating:${datos.vote_average}</P>
                 <p>Fecha:${datos.release_date}</p>
                 <p> Duracion:${datos.runtime} min</p>

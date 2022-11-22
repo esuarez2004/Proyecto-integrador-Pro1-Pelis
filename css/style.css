@@ -321,7 +321,13 @@ footer{
 .NoFav{
 font-size: 30px;
 }
- 
+.plataforma{
+    margin-left: 95px;
+}
+.titulo{
+    color: white;
+    font-size: 150%;
+}
 
 /*Responsive  (Iphone 12 pro)*/
 @media(max-width:390px){
