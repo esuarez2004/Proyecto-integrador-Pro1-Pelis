@@ -26,10 +26,9 @@ fetch(url)
                 <p>Fecha:${datos.release_date}</p>
                 <p> Duracion:${datos.runtime} min</p>
                 <p>Sinopsis:${datos.overview}</p>
-                <p>${datos.genres[0].name}</p>
-
-            </article>
-        `;
+                <p>Genero:${datos.genres[0].name}</p>
+                
+            `
 
 }).catch(function (error) {
     return error;
