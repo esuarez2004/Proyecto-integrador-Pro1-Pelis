@@ -4,13 +4,14 @@ let qsObj = new URLSearchParams(qs);
 let id = qsObj.get("id");
 let fav = document.querySelector(".clicFav")
 let apiKey = "f2acabc2f1f7dfa29f6493c2fcca003f"
+
 const url = `https://api.themoviedb.org/3/tv/${id}?api_key=${apiKey}&language=es`
 
+
 fetch(url)
-
-
 .then(function(response) {
     return response.json();
+
 })
 .then(function(datos){
 
@@ -33,7 +34,7 @@ fetch(url)
 }).catch(function (error) {
     return error;
 })
-let url_plataformas = `https://api.themoviedb.org/3/movie/${id}/watch/providers?api_key=${apiKey}`
+let url_plataformas = `https://api.themoviedb.org/3/tv/${id}/watch/providers?api_key=${apiKey}`
 
 fetch(url_plataformas)
     .then(function(response) {
@@ -79,4 +80,53 @@ fav.addEventListener("click",function(e) {
 
     let favsToString = JSON.stringify(favoritos);
     localStorage.setItem("favoritos", favsToString )
+})
+
+const recomen_url = `https://api.themoviedb.org/3/tv/${id}/recommendations?api_key=${apiKey}&language=en-US&page=1`
+let ver_recom = document.querySelector(".peli-recom")
+let btn_recom = document.querySelector(".btn_recomendaciones")
+btn_recom.addEventListener("click", function(){
+    if (ver_recom.style.display == "flex"){
+        ver_recom.sytle.display == "none"
+        btn_recom.innerText = "Ver las recomendaciones"
+    } else{
+        ver_recom.style.display = "flex"
+        btn_recom.style.display = "Esconder las recomendaciones"    
+    }
+})
+fetch(recomen_url)
+.then(function(response){
+    return response.json();
+})
+.then(function(data){
+        console.log(data);
+        let conteinerRecomendaciones = document.querySelector('.btn_recomendaciones')
+        info = data.results
+        console.log(info.name)
+
+        recomendaciones = '';
+        recomendaciones += `<article class='pelis_recomendadas'>
+                                <a class ='conteinerrecomendados' href='detalle_series.html?id=${info[0].id}'>
+                                <h3 class='titulo_recomendados'>${info[0].name}</h3>
+                                <img class = 'foto_recomendaciones' src='https://image.tmdb.org/t/p/w500/${info[0].poster_path}' alt=''>
+                                </a>
+                            </article>`
+        recomendaciones += `<article class='pelis_recomendadas'>
+                                <a class ='conteinerrecomendados' href='detalle_series.html?id=${info[1].id}'>
+                                <h3 class='titulo_recomendados'>${info[1].name}</h3>
+                                <img class = 'foto_recomendaciones' src='https://image.tmdb.org/t/p/w500/${info[1].poster_path}' alt=''>
+                                </a>
+                            </article>`
+
+        recomendaciones += `<article class='pelis_recomendadas'>
+                                <a class ='conteinerrecomendados' href='detalle_series.html?id=${info[2].id}'>
+                                <h3 class='titulo_recomendados'>${info[2].name}</h3>
+                                <img class = 'foto_recomendaciones' src='https://image.tmdb.org/t/p/w500/${info[2].poster_path}' alt=''>
+                                </a>
+                            </article>`
+
+    conteinerRecomendaciones.innerHTML = recomendaciones
+})
+.catch(function(error){
+        console.log('El error es: ' + error);
 })
