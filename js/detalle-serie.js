@@ -58,7 +58,7 @@ fetch(url_plataformas)
 
 let favoritos = []
 
-let recuperoStorage = localStorage.getItem("favoritos")
+let recuperoStorage = localStorage.getItem("favoritoss")
 
 if (recuperoStorage != null) {
     favoritos = JSON.parse(recuperoStorage)
