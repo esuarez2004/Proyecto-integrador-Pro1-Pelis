@@ -9,11 +9,11 @@ const url = `https://api.themoviedb.org/3/tv/${id}?api_key=${apiKey}&language=es
 
 
 fetch(url)
-.then(function(response) {
-    return response.json();
+    .then(function (response) {
+        return response.json();
 
-})
-.then(function(datos){
+    })
+    .then(function (datos) {
 
         console.log(datos);
 
@@ -31,28 +31,28 @@ fetch(url)
                 
             `
 
-}).catch(function (error) {
-    return error;
-})
+    }).catch(function (error) {
+        return error;
+    })
 let url_plataformas = `https://api.themoviedb.org/3/tv/${id}/watch/providers?api_key=${apiKey}`
 
 fetch(url_plataformas)
-    .then(function(response) {
+    .then(function (response) {
         return response.json()
     })
-    .then(function(data) {
+    .then(function (data) {
         console.log(data);
         let plataformas = document.querySelector(".plataforma");
-        
-        if (data.results.AR == null){
+
+        if (data.results.AR == null) {
             plataformas.innerHTML += "No se encontraron plataformas en Argentina"
-        }else{
-            for(let i = 0; i<data.results.AR.flatrate.length; i ++){
+        } else {
+            for (let i = 0; i < data.results.AR.flatrate.length; i++) {
                 plataformas.innerHTML += data.results.AR.flatrate[i].provider_name + ", "
             }
         }
     })
-    .catch(function(error) {
+    .catch(function (error) {
         console.log("Error: " + error);
     })
 
@@ -66,67 +66,64 @@ if (recuperoStorage != null) {
 if (favoritos.includes(id)) {
     fav.innerText = "Quitar de Favoritos";
 }
-fav.addEventListener("click",function(e) {
+fav.addEventListener("click", function (e) {
     e.preventDefault();
 
-    if (favoritos.includes(id)){
+    if (favoritos.includes(id)) {
         let indice = favoritos.indexOf(id)
         favoritos.splice(indice, 1);
         fav.innerText = "Agregar a Favoritos"
-    }else{
+    } else {
         favoritos.push(id)
         fav.innerText = "Quitar de favoritos"
     }
 
     let favsToString = JSON.stringify(favoritos);
-    localStorage.setItem("favoritos", favsToString )
+    localStorage.setItem("favoritoss", favsToString)
 })
 
-const recomen_url = `https://api.themoviedb.org/3/tv/${id}/recommendations?api_key=${apiKey}&language=en-US&page=1`
-let ver_recom = document.querySelector(".peli-recom")
-let btn_recom = document.querySelector(".btn_recomendaciones")
-btn_recom.addEventListener("click", function(){
-    if (ver_recom.style.display == "flex"){
-        ver_recom.sytle.display == "none"
-        btn_recom.innerText = "Ver las recomendaciones"
-    } else{
-        ver_recom.style.display = "flex"
-        btn_recom.style.display = "Esconder las recomendaciones"    
-    }
-})
+let recomen_url = `https://api.themoviedb.org/3/tv/${id}/recommendations?api_key=${apiKey}&language=en-US&page=1`
+
 fetch(recomen_url)
-.then(function(response){
-    return response.json();
-})
-.then(function(data){
+    .then(function (response) {
+        return response.json();
+    })
+    .then(function (data) {
         console.log(data);
-        let conteinerRecomendaciones = document.querySelector('.btn_recomendaciones')
-        info = data.results
-        console.log(info.name)
+        console.log(data.results);
 
-        recomendaciones = '';
-        recomendaciones += `<article class='pelis_recomendadas'>
-                                <a class ='conteinerrecomendados' href='detalle_series.html?id=${info[0].id}'>
-                                <h3 class='titulo_recomendados'>${info[0].name}</h3>
-                                <img class = 'foto_recomendaciones' src='https://image.tmdb.org/t/p/w500/${info[0].poster_path}' alt=''>
-                                </a>
-                            </article>`
-        recomendaciones += `<article class='pelis_recomendadas'>
-                                <a class ='conteinerrecomendados' href='detalle_series.html?id=${info[1].id}'>
-                                <h3 class='titulo_recomendados'>${info[1].name}</h3>
-                                <img class = 'foto_recomendaciones' src='https://image.tmdb.org/t/p/w500/${info[1].poster_path}' alt=''>
-                                </a>
-                            </article>`
+        let recomArray = []
+        console.log(recomArray)
+        let peli_recom = document.querySelector("peli-recom")
 
-        recomendaciones += `<article class='pelis_recomendadas'>
-                                <a class ='conteinerrecomendados' href='detalle_series.html?id=${info[2].id}'>
-                                <h3 class='titulo_recomendados'>${info[2].name}</h3>
-                                <img class = 'foto_recomendaciones' src='https://image.tmdb.org/t/p/w500/${info[2].poster_path}' alt=''>
-                                </a>
-                            </article>`
+        for (let i = 1; i < 5; i++) {
+            recomArray = + ` <section clas="recom-name">
+            <p class="btn_recomendaciones">(${data.results[i].name})</p>
+            <a href= ".detail_movie.html?id=${data.results[i].id}">
+                <img class="img" src="https://image.tmdb.org/t/p/w500/${data.result[i].poster_path}" alt="${data.results[i].original_name}">
+            </a>
+            
+            </section>` 
+        }
+        peli_recom.innerHTML = recomArray
 
-    conteinerRecomendaciones.innerHTML = recomendaciones
-})
+        let btn_recom = document.querySelector(".btn_recomendaciones")
+        console.log(btn_recom)
+        let ver_recom = document.querySelector(".peli_recom")
+        
+        btn_recomendaciones.addEventListener("click"), function (){
+        
+            if (btn_recomendacionesinnerText == "Recomendaciones") {
+                ver_recom.sytle.display == "flex"
+                this.innerText = "Esconder recomendaciones";
+           
+            } else {
+                ver_recom.style.display = "none"
+                this.innerText = "Recomendaciones"
+            }
+        }
+    
+    })
 .catch(function(error){
         console.log('El error es: ' + error);
-})
+    })
