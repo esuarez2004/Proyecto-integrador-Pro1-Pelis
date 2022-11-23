@@ -1,5 +1,5 @@
 let forms = document.querySelector("form"); //Capturamos el form
-let buscar = document.querySelector("[name=Buscador]");
+let buscar = document.querySelector("[name=Buscador]"); //Capture un campo usando el atributo name
 // Agregamos evento
 // Tipo de evento = submit
 forms.addEventListener("submit",function(event) { // function= callback, event= parametro

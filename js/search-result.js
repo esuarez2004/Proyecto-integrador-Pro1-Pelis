@@ -1,6 +1,6 @@
 //Capturar qs (3 lineas)
 let qs = location.search; // Obj que trae info. de toda la URL y el search busca una parte de la URL
-let qsOBJ = new URLSearchParams(qs);  // Transfromarla en un ObJ para ser manipulable
+let qsOBJ = new URLSearchParams(qs);  //  ObJ manipulable
 let info = qsOBJ.get("Buscador");  // Obtiene la busqueda (nombre qs)
 
 //DOM de "Tu resultado:""
