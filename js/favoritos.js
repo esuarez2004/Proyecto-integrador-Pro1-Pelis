@@ -36,7 +36,7 @@ else {
                               </article>`
         
     section.innerHTML = PersonajeFavoritos
-    /* para cuando termine el for se presentren en el DOM*/
+    
     return data   
     }   
     )
@@ -90,7 +90,7 @@ else {
                               </article>`
         
     sectionx.innerHTML = PersonajeFavoritosx
-    /* para cuando termine el for se presentren en el DOM*/
+    
     return datas   
     }   
     )
