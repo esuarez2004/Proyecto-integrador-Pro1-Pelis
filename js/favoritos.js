@@ -58,7 +58,7 @@ let RecuperoStoragex = localStorage.getItem("favoritoss");
 let favoritosx = JSON.parse(RecuperoStoragex)
 /* lo convierto en un dato manipulable para jv (array) */
 
-let sectionx = document.querySelector(".section")
+let sectionx = document.querySelector(".section2")
 
 let apiKeyx = "f2acabc2f1f7dfa29f6493c2fcca003f"
 
