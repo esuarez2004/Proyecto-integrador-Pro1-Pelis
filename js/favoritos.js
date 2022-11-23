@@ -49,11 +49,13 @@ else {
     
 }
 
+
+
 /* Lo mismo con serie */
 let RecuperoStoragex = localStorage.getItem("favoritos");    
 /* llega en un json */ 
 
-let favoritosx = JSON.parse(RecuperoStorage)
+let favoritosx = JSON.parse(RecuperoStoragex)
 /* lo convierto en un dato manipulable para jv (array) */
 
 let sectionx = document.querySelector(".section")
@@ -64,38 +66,38 @@ let PersonajeFavoritosx = '';
 
 if (favoritosx == null || favoritosx.length == 0) {
 /*si no hay favoritos*/
-section.innerHTML = '<strong class="NoFav"> NO hay series ni peliculas en favoritos</strong>'
+sectionx.innerHTML = '<strong class="NoFav"> NO hay series ni peliculas en favoritos</strong>'
 } 
 
 else {
     for (let i = 0; i < favoritosx.length; i++) {
-    let url = `https://api.themoviedb.org/3/tv/${favoritosx[i]}?api_key=${apiKey}&language=es`
+    let urls = `https://api.themoviedb.org/3/tv/${favoritosx[i]}?api_key=${apiKeyx}&language=es`
     
-    fetch(url)
+    fetch(urls)
 
-    .then(function (response) {
-    return response.json()
+    .then(function (responsex) {
+    return responsex.json()
     })
 
-    .then(function (data) {
-    console.log(data);
+    .then(function (datas) {
+    console.log(datas);
         PersonajeFavoritosx += `<article>
                                 <div>
-                                <a href="./detalle_serie.html?id=${data.id}"><img src="https://image.tmdb.org/t/p/w342${data.poster_path}" alt="${data.original_title}"></a> 
+                                <a href="./detalle_serie.html?id=${datas.id}"><img src="https://image.tmdb.org/t/p/w342${data.poster_path}" alt="${data.original_title}"></a> 
                                 </div>
-                                <h5 class="Titulo-search">Titulo: ${data.original_title}</h5>
-                                <a href="./detalle_serie.html?id=${data.id}">Ver mas informacion</a>
+                                <h5 class="Titulo-search">Titulo: ${datas.original_name}</h5>
+                                <a href="./detalle_serie.html?id=${datas.id}">Ver mas informacion</a>
                               </article>`
         
-    section.innerHTML = PersonajeFavoritos
+    sectionx.innerHTML = PersonajeFavoritosx
     /* para cuando termine el for se presentren en el DOM*/
-    return data   
+    return datas   
     }   
     )
 
-    .catch(function (error) {
-    console.log(error);
-    return error
+    .catch(function (errorx) {
+    console.log(errorx);
+    return errorx
     })
     }
     
