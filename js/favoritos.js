@@ -12,7 +12,7 @@ let PersonajeFavoritos = '';
 
 if (favoritos == null || favoritos.length == 0) {
 /*si no hay favoritos*/
-section.innerHTML = '<strong class="NoFav"> NO hay series ni peliculas en favoritos</strong>'
+section.innerHTML = '<strong class="NoFav"> NO hay peliculas en favoritos</strong>'
 } 
 
 else {
@@ -52,7 +52,7 @@ else {
 
 
 /* Lo mismo con serie */
-let RecuperoStoragex = localStorage.getItem("favoritos");    
+let RecuperoStoragex = localStorage.getItem("favoritoss");    
 /* llega en un json */ 
 
 let favoritosx = JSON.parse(RecuperoStoragex)
@@ -66,12 +66,12 @@ let PersonajeFavoritosx = '';
 
 if (favoritosx == null || favoritosx.length == 0) {
 /*si no hay favoritos*/
-sectionx.innerHTML = '<strong class="NoFav"> NO hay series ni peliculas en favoritos</strong>'
+sectionx.innerHTML = '<strong class="NoFav"> NO hay series en favoritos</strong>'
 } 
 
 else {
-    for (let i = 0; i < favoritosx.length; i++) {
-    let urls = `https://api.themoviedb.org/3/tv/${favoritosx[i]}?api_key=${apiKeyx}&language=es`
+    for (let u = 0; u < favoritosx.length; u++) {
+    let urls = `https://api.themoviedb.org/3/tv/${favoritosx[u]}?api_key=${apiKeyx}&language=es`
     
     fetch(urls)
 
@@ -83,7 +83,7 @@ else {
     console.log(datas);
         PersonajeFavoritosx += `<article>
                                 <div>
-                                <a href="./detalle_serie.html?id=${datas.id}"><img src="https://image.tmdb.org/t/p/w342${data.poster_path}" alt="${data.original_title}"></a> 
+                                <a href="./detalle_serie.html?id=${datas.id}"><img src="https://image.tmdb.org/t/p/w342${datas.poster_path}" alt="${datas.original_title}"></a> 
                                 </div>
                                 <h5 class="Titulo-search">Titulo: ${datas.original_name}</h5>
                                 <a href="./detalle_serie.html?id=${datas.id}">Ver mas informacion</a>
