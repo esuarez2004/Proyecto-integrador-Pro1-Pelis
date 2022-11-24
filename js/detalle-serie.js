@@ -97,10 +97,10 @@ fetch(recomen_url)
         let peli_recom = document.querySelector("peli-recom")
 
         for (let i = 1; i < 5; i++) {
-            recomArray = + ` <section clas="recom-name">
+            recomArray += ` <section class="section-recom">
             <p class="btn_recomendaciones">(${data.results[i].name})</p>
             <a href= ".detail_movie.html?id=${data.results[i].id}">
-                <img class="img" src="https://image.tmdb.org/t/p/w500/${data.result[i].poster_path}" alt="${data.results[i].original_name}">
+                <img class="img" src="https://image.tmdb.org/t/p/w500/${data.result[i].poster_path}" alt="${data.results[i].name}">
             </a>
             
             </section>` 
@@ -109,11 +109,11 @@ fetch(recomen_url)
 
         let btn_recom = document.querySelector(".btn_recomendaciones")
         console.log(btn_recom)
-        let ver_recom = document.querySelector(".peli_recom")
+        let ver_recom = document.querySelector(".peli-recom")
         
-        btn_recomendaciones.addEventListener("click"), function (){
+        btn_recomendaciones.addEventListener("click", function (){
         
-            if (btn_recomendacionesinnerText == "Recomendaciones") {
+            if (ver_recom.style.display == "none") {
                 ver_recom.sytle.display == "flex"
                 this.innerText = "Esconder recomendaciones";
            
@@ -121,7 +121,7 @@ fetch(recomen_url)
                 ver_recom.style.display = "none"
                 this.innerText = "Recomendaciones"
             }
-        }
+        })
     
     })
 .catch(function(error){

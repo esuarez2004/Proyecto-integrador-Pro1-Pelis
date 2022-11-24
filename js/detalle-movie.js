@@ -27,13 +27,13 @@ fetch(url)
                 <p> Duracion:${datos.runtime} min</p>
                 <p>Sinopsis:${datos.overview}</p>
                 <p>Genero:${datos.genres[0].name}</p>
-                
+                    
             `
 
 }).catch(function (error) {
     return error;
 })
-let url_plataformas = `https://api.themoviedb.org/3/tv/${id}/watch/providers?api_key=${apiKey}`
+let url_plataformas = `https://api.themoviedb.org/3/movie/${id}/watch/providers?api_key=${apiKey}`
 
 fetch(url_plataformas)
     .then(function(response) {
@@ -80,3 +80,49 @@ fav.addEventListener("click",function(e) {
     let favsToString = JSON.stringify(favoritos);
     localStorage.setItem("favoritos", favsToString )
 })
+
+let recomen_url = `https://api.themoviedb.org/3/movie/${id}/recommendations?api_key=${apiKey}&language=en-US&page=1`
+
+fetch(recomen_url)
+    .then(function (response) {
+        return response.json();
+    })
+    .then(function (data) {
+        console.log(data);
+        console.log(data.results);
+
+        let recomArray = []
+        console.log(recomArray)
+        let peli_recom = document.querySelector("peli-recom")
+
+        for (let i = 1; i < 5; i++) {
+            recomArray += ` <section class="section-recom">
+            <p class="btn_recomendaciones">(${data.results[i].name})</p>
+            <a href= ".detail_movie.html?id=${data.results[i].id}">
+                <img class="img" src="https://image.tmdb.org/t/p/w500/${data.result[i].poster_path}" alt="${data.results[i].name}">
+            </a>
+            
+            </section>` 
+        }
+        peli_recom.innerHTML = recomArray
+
+        let btn_recom = document.querySelector(".btn_recomendaciones")
+        console.log(btn_recom)
+        let ver_recom = document.querySelector(".peli-recom")
+        
+        btn_recomendaciones.addEventListener("click", function (){
+        
+            if (btn_recomendaciones.innerText == "Recomendaciones") {
+                ver_recom.sytle.display == "flex"
+                this.innerText = "Esconder recomendaciones";
+           
+            } else {
+                ver_recom.style.display = "none"
+                this.innerText = "Recomendaciones"
+            }
+        })
+    
+    })
+.catch(function(error){
+        console.log('El error es: ' + error);
+    })

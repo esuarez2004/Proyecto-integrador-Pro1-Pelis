@@ -321,10 +321,20 @@ footer{
 .NoFav{
 font-size: 30px;
 }
-
+.d-pelicula{
+    color:#e9d7d7;
+    
+}
+.plataforma{
+    color: #e9d7d7;
+  
+}
 .titulo{
     color: white;
     font-size: 150%;
+}
+.ver_recom{
+    display: flex;
 }
 
 /*Responsive  (Iphone 12 pro)*/
